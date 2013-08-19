@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Stopwatch and Timer</title>
+        <meta name="description" content="A sleek free online stopwatch and timer complete with lap splits and an alarm sound.">
+        <meta name="keywords" content="stopwatch timer online free">
+        <meta property="og:title" content="Online Stopwatch and Timer" /> 
+        <meta property="og:description" content="A sleek free online stopwatch and timer complete with lap splits and an alarm sound." /> 
+        <meta property="og:image" content="images/thumbnail.png" />
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="stylesheets/fonts.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Chivo:400,400italic">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="javascripts/transform.js"></script>
+        <script type="text/javascript" src="javascripts/utility.js"></script>
+        <script type="text/javascript" src="javascripts/datetime.js"></script>
+        <script type="text/javascript" src="javascripts/stopwatch.js"></script>
+        <script type="text/javascript" src="javascripts/timer.js"></script>
+        <script type="text/javascript" src="javascripts/main.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-35287118-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <div id="watch">
+                <div class="glare"></div>
+                <div class="timer"></div>
+                <div class="stopwatch active"></div>
+                <div id="overlay"></div>
+                <div id="circles">
+                    <div id="hours" class="circle active">HH</div>
+                    <div id="minutes" class="circle">MM</div>
+                    <div id="seconds" class="circle">SS</div>
+                </div>
+                <div id="splitInfo">
+                    <div id="laps">
+                        <span class="number">0</span>
+                        <span class="text">laps</span>
+                    </div>
+                    <div id="currentSplit">
+                        Split
+                        <span>00:00:00:00</span>
+                    </div>
+                    <div id="difference">
+                        Difference
+                        <span>00:00:00:00</span>
+                    </div>
+                    <div id="splitCounter">
+                        Split Timer
+                        <span>00:00:00:00</span>
+                    </div>
+                    <div id="stopwatch" class="watch"></div>
+                </div>
+                <div id="timerInfo">
+                    <table class="timerTable">
+                        <thead>
+                            <tr>
+                                <td>Start Time</td>
+                                <td>Elapsed Time</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="initTimer">00:00:00:00</td>
+                                <td class="elapsed">00:00:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="timer" class="watch">
+                        <div id="editableInput">
+                            <input type="text" value="00" maxlength="2" class="hoursInput"><span>:</span><input type="text" value="00" maxlength="2" class="minutesInput"><span>:</span><input type="text" value="00" maxlength="2" class="secondsInput"><span>:</span><input type="text" value="00" maxlength="2" class="milisecondsInput">
+                        </div>
+                        <div id="alarmSpan">
+                            <span class="none">00:00:00:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="toggle" class="button">Start/Stop</div>
+                <div id="reset" class="button">Reset</div>
+                <div id="split" class="button">Split</div>
+                <div id="date">
+                    <div id="date_wheel">
+                        <div id="date_ticker"></div>
+                        <div id="currentMonth">
+                            <p style="white-space:pre;">Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+Set
+Oct
+Nov
+Dec</p>
+                        </div>
+                        <div id="currentDay">
+                            <p style="white-space:pre;">01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</p>
+                        </div>
+                        <div id="date_glare"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="splitsContainer"></div>
+            <div class="splits">
+                <table class="currentSplits">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Split</th>
+                            <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="audio"></div>
+            <div id="spinnerMargin"></div>
+            <div class="push"></div>
+        </div>
+        <div class="footerContainer">
+            <div id="footer">
+                <a href="http://www.nodejs.org" target="_blank">
+                    <div id="node"></div>
+                </a>
+                <a href="http://www.expressjs.com" target="_blank">
+                    <div id="express"></div>
+                </a>
+                <div id="built"></div>
+                <div id="plus"></div>
+                <a href="http://www.sethmileshoward.com" target="_blank">
+                    <div id="author"></div>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
