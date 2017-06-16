@@ -68,7 +68,7 @@ function toggleTimer(){
 
 function soundAlarm(){
     $('.elapsed').text(formatTime(program.timer.initialTime));
-    var mp3snd = "../sounds/alarm.mp3";
+    var mp3snd = "sounds/alarm.mp3";
     var audio = $('<audio autoplay="autoplay"></audio>');
     $('<source src="'+mp3snd+'" type="audio/mpeg">').appendTo(audio);
     $('<bgsound src="'+mp3snd+'" loop="loop">').appendTo(audio);
